@@ -97,7 +97,8 @@ namespace Harmonition
         /// <param name="e"></param>
         private void btnRecupererCompte_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Recuperation en cours");
+            getEmailBox pageGetEmailBox = new getEmailBox();
+            pageGetEmailBox.Show();
         }
 
         /// <summary>

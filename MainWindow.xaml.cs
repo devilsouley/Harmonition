@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Harmonition___Accueil
+namespace Harmonition
 {
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
@@ -26,6 +26,12 @@ namespace Harmonition___Accueil
 
             Lecteur.Play();
 
+        }
+
+        private void btnConnexion_Click(object sender, RoutedEventArgs e)
+        {
+            Connexion pageConnexion = new Connexion();
+            pageConnexion.Show();
         }
     }
 }

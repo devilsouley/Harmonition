@@ -1,4 +1,4 @@
-﻿<Window x:Class="Harmonition___Accueil.MainWindow"
+﻿<Window x:Class="Harmonition.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Harmonition - Accueil" Height="500" Width="700">
@@ -46,7 +46,7 @@
                         Margin="10,0,10,0">
                 </Button>
 
-                <Button Name="btnConnexion" Content="Connexion"
+                <Button Name="btnConnexion" Content="Connexion" Click="btnConnexion_Click"
                         Width="100">
                 </Button>
 

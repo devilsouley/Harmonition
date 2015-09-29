@@ -22,7 +22,7 @@ namespace Harmonition
         /// <summary>
         /// Constructeur de la page récupération de compte
         /// </summary>
-        public RecuperationCompte()
+        public RecuperationCompte(string courriel)
         {
             InitializeComponent();
             txtMessage.Text = "Un message a été envoyé à l'adresse courriel\nsuivante pour vous permettre de réinitialisé\nvotre mot de passe.\n\ncourriel: ";

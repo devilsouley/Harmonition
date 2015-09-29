@@ -1,1 +1,2 @@
 D:\test\Harmonition\bin\Debug\Harmonition.exe.config
+D:\Harmonition\bin\Debug\Harmonition.exe.config

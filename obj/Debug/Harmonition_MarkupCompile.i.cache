@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\test\Harmonition\obj\Debug\
+D:\Harmonition\obj\Debug\
 Harmonition
 none
 false
 DEBUG;TRACE
-D:\test\Harmonition\App.xaml
-
-
-8-445861496
+D:\Harmonition\App.xaml
+52121996135
+1-1316496031
+13-454135149
 12-1401562060
-
+Connexion.xaml;CreationDeCompte.xaml;getEmailBox.xaml;MainWindow.xaml;RecuperationCompte.xaml;
 
 False
 

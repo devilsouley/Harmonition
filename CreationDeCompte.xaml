@@ -1,0 +1,59 @@
+﻿<Window x:Class="Harmonition___Version_Julie.CreationDeCompte"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Harmonition - Création de compte" Height="350" Width="525">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Width" Value="100"></Setter>
+            <Setter Property="Margin" Value="10,10,0,0"></Setter>
+        </Style>
+        <Style x:Key="ChampEntrerInfo" TargetType="TextBox">
+            <Setter Property="Width" Value="200"></Setter>
+            <Setter Property="Margin" Value="10,10,0,0"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <!-- SECTION INFORMATIONS -->
+        <StackPanel Grid.Column="0" Grid.Row="0">         
+            <DockPanel>
+                <Label>Prénom</Label>
+                <TextBox Style="{StaticResource ChampEntrerInfo}" Name="txtPrenom"  KeyUp="validerPrenom"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label>Nom</Label>
+                <TextBox Style="{StaticResource ChampEntrerInfo}" Name="txtNom" KeyUp="validerNom"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label>Courriel</Label>
+                <TextBox Style="{StaticResource ChampEntrerInfo}" Name="txtCourriel" KeyUp="validerCourriel"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label>Usager</Label>
+                <TextBox Style="{StaticResource ChampEntrerInfo}" Width="200" Margin="10,10,0,0" Name="txtUsager"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label>Mot de passe</Label>
+                <PasswordBox Width="200" Margin="10,10,0,0" Name="txtMdp"></PasswordBox>
+            </DockPanel>
+            <DockPanel>
+                <TextBlock TextAlignment="Center" TextWrapping="Wrap" Width="100" Height="50" FontWeight="Bold" Margin="10,10,0,0">Confirmation du mot de passe</TextBlock>
+                <PasswordBox Width="200" Height="25" Margin="10,10,0,0" Name="txtConfirmationMdp"></PasswordBox>
+            </DockPanel>
+            <DockPanel>
+                <Button Margin="20" Width="125" Name="btnAnnuler"> Annuler </Button>
+                <Button Margin="20" Width="125" Name="btnCreerVotreCompte"> Créer votre compte </Button>
+            </DockPanel>
+        </StackPanel>
+
+        <!-- SECTION VALIDATION -->
+        <TextBlock Grid.Column="1" Grid.Row="0" Name="txtValidationChamps" Margin="5" TextWrapping="Wrap" Background="AliceBlue" FontSize="15"></TextBlock>
+    </Grid>
+</Window>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,25 +14,55 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Harmonition
+namespace Harmonition___Accueil
 {
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        public WMPLib.WindowsMediaPlayer wplayer;
+        static readonly object locker = new object();
+
         public MainWindow()
         {
             InitializeComponent();
 
-            Lecteur.Play();
+            wplayer = new WMPLib.WindowsMediaPlayer();
+            wplayer.URL = "H:/Bureau/Harmonition - Accueil/Harmonition - Accueil/FichiersAudio/ValleeGerudo.mp3";
+            
+            
+            wplayer.controls.play();
+            
 
         }
 
-        private void btnConnexion_Click(object sender, RoutedEventArgs e)
+        private void UpdateDureeCourante(Action callback)
         {
-            Connexion pageConnexion = new Connexion();
-            pageConnexion.Show();
+            //lblDureeCourante.Content = wplayer.controls.currentPositionString;
+
+            Thread.Sleep(1000);
+            callback();
         }
+
+        // TODO
+        private void btnPlay_Click(object sender, RoutedEventArgs e)
+        {
+            new Thread(() => UpdateDureeCourante(() => lblDureeCourante.Content = wplayer.controls.currentPositionString)).Start();
+
+
+            /*
+            while (wplayer.controls.currentPosition < wplayer.currentMedia.duration)
+            {
+                lock(locker)
+                {
+                    new Thread(UpdateDureeCourante).Start();
+                    UpdateDureeCourante();
+                }
+            }
+            */
+            
+        }
+
     }
 }

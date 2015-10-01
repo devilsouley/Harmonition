@@ -25,7 +25,17 @@ namespace Harmonition
         public RecuperationCompte(string courriel)
         {
             InitializeComponent();
-            txtMessage.Text = "Un message a été envoyé à l'adresse courriel\nsuivante pour vous permettre de réinitialisé\nvotre mot de passe.\n\ncourriel: ";
+            txtMessage.Text = "Si l'adresse courriel existe dans notre base de\ndonnées, un message sera envoyé à l'adresse\ncourriel suivante pour vous permettre\nde réinitialisé votre mot de passe.\n\nMerci de cousulter votre messagerie:\n"+courriel;
+        }
+
+        /// <summary>
+        /// Boutton pour réenvoyer un message courriel de récupération de compte.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnReenvoyerMessage(object sender, RoutedEventArgs e)
+        {
+
         }
 
         /// <summary>
@@ -33,9 +43,9 @@ namespace Harmonition
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnOk_Click(object sender, RoutedEventArgs e)
+        private void btnFermer(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
+        }        
     }
 }

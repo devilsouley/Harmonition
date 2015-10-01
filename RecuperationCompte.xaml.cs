@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace Harmonition
 {
     /// <summary>
-    /// Logique d'interaction pour RecuperationCompte.xaml
+    /// Cette page sert à récupérer un compte existant en envoyant un courriel 
     /// </summary>
     public partial class RecuperationCompte : Window
     {

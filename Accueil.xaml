@@ -1,0 +1,118 @@
+﻿<Window x:Class="Harmonition.Accueil"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Harmonition - Accueil" Height="500" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"></RowDefinition>
+            <RowDefinition Height="65"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Name="lblNomProjet" Content="HARMONITION"
+               Grid.Column="0" Grid.Row="0"
+               Grid.ColumnSpan="2"
+               VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+               FontSize="50">
+        </Label>
+
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="10,5,10,5">
+
+            <Button Name="btnAjoutNouvMusique" Content="Ajouter de la nouvelle musique"
+                    Height="25"
+                    Margin="0,0,0,5">
+            </Button>
+
+            <Button Name="btnEcouterAutreChose" Content="Écouter autre chose"
+                    Height="25">
+            </Button>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1" Margin="10,5,10,5">
+
+            <DockPanel Height="25" Margin="0,0,0,5" HorizontalAlignment="Center">
+
+                <Button Name="btnClavardage" Content="Clavardage"
+                        Width="100">
+                </Button>
+
+                <Button Name="btnMixage" Content="Mixage"
+                        Width="100"
+                        Margin="10,0,10,0">
+                </Button>
+
+                <Button Name="btnConnexion" Content="Connexion"
+                        Width="100">
+                </Button>
+
+            </DockPanel>
+
+            <DockPanel Height="25">
+                
+                <Image Source="pack://application:,,,/Images/loupe.png"
+                       Width="15">
+                </Image>
+
+                <TextBox Name="txtRecherche"
+                         Margin="5,0,0,0">
+                </TextBox>
+
+            </DockPanel>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="2" Margin="10,5,10,5">
+
+            <Image Name="imgAlbum" Source="pack://application:,,,/Fichiers audio/1.jpg"
+                   Width="300"
+                   HorizontalAlignment="Center">
+            </Image>
+
+            <Canvas Height="25">
+                <ProgressBar Height="25" Width="300" Margin="10,0,10,0"></ProgressBar>
+                <Label Name="lblDureeCourante" HorizontalContentAlignment="Center"
+                       Height="25" Width="300" Margin="10,0,10,0">
+                </Label>
+            </Canvas>
+            
+
+            <DockPanel Height="25" Margin="10,10,0,0" HorizontalAlignment="Left">
+
+                <Button Name="btnRalentire" Content="►-"
+                    Width="25" Height="25">
+                </Button>
+
+                <Button Name="btnPlay" Content="►"
+                    Width="25" Height="25" Click="btnPlay_Click">
+                </Button>
+
+                <Button Name="btnAccelerer" Content="►+"
+                    Width="25" Height="25">
+                </Button>
+
+            </DockPanel>
+            
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="2" Margin="10,5,10,5">
+
+            <DataGrid Name="dgListeCourante"
+                      Height="310"
+                      AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Titre" Width="110"/>
+                    <DataGridTextColumn Header="Artiste" Width="110"/>
+                    <DataGridTextColumn Header="Album" Width="110"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
